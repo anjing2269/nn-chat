@@ -43,9 +43,9 @@ html(lang="ja")
                 i.bi.bi-trash
 
     div.fixed-bottom.bg-body.p-4
-      form(action="/posts", method="post").container-fluid.row.g-3
+      form(action="/posts", method="post" name="message-form").container-fluid.row.g-3
         div.col-12
-          textarea(name="content", cols="40", rows="4").form-control
+          textarea(name="content", cols="40", rows="4" placeholder="Ctrl(Command)+Enterで送信できます").form-control
         div.col-12
           button(type="submit").btn.btn-primary.float-end
             i.bi.bi-send
