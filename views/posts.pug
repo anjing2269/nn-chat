@@ -36,6 +36,8 @@ html(lang="ja")
         div.card-body
           div.d-flex.justify-content-between
             h5.card-title #{post.postedBy}
+              if post.postedBy === 'admin'
+                i.bi.bi-patch-check-fill.ms-1
             p.card-text
               small #{post.createdAt}
           p.card-text.lead!= post.content
