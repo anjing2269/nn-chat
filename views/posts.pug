@@ -23,13 +23,6 @@ html(lang="ja")
             li
               a.dropdown-item(href="/logout") ログアウト
 
-    form(action="/posts", method="post")
-      div
-        textarea(name="content", cols="40", rows="4")
-      div
-        button(type="submit") 送信
-    h2 投稿一覧
-
     each post in posts
       - const borderColor = (user === post.postedBy ? 'border-primary' : '')
       div(class=`card ${borderColor} my-3`)
@@ -49,13 +42,14 @@ html(lang="ja")
               button(type="submit").btn.btn-outline-danger.btn-sm
                 i.bi.bi-trash
 
-      //p 
-      //p 送信日時: 
-      //p!= 
-        
-          
-           削除
-      //hr
+    div.fixed-bottom.bg-body.p-4
+      form(action="/posts", method="post").container-fluid.row.g-3
+        div.col-12
+          textarea(name="content", cols="40", rows="4").form-control
+        div.col-12
+          button(type="submit").btn.btn-primary.float-end
+            i.bi.bi-send
+
     script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js",
       integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI",
       crossorigin="anonymous")
