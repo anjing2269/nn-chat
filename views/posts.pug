@@ -32,7 +32,8 @@ html(lang="ja")
               if post.postedBy === 'admin'
                 i.bi.bi-patch-check-fill.ms-1
             p.card-text
-              small #{post.createdAt}
+              - const tooltipTitle = `<small>${post.absoluteCreatedAt}</small>`
+              small(data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title=tooltipTitle) #{post.relativeCreatedAt}
           p.card-text.lead!= post.content
         - const isDeletable = (user === post.postedBy || user === 'admin')
         if isDeletable
