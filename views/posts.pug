@@ -11,7 +11,7 @@ html(lang="ja")
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css")
     link(rel="stylesheet", href="style.css")
     title NNチャット
-  body.container.overflow-scroll
+  body.container.overflow-scroll(data-bs-theme="dark")
     nav.navbar.fixed-top.bg-primary
       div.container-fluid
         h1.text-light.navbar-brand.mx-auto NNチャット
@@ -21,6 +21,7 @@ html(lang="ja")
             i.bi.bi-gear-fill.ms-1
           ul.dropdown-menu.dropdown-menu-end(aria-lablledby="menu")
             li
+              a.dropdown-item(href="/changeTheme") ライトモード・ダークモードの切り替え
               a.dropdown-item(href="/logout") ログアウト
 
     each post in posts
