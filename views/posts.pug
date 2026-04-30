@@ -36,7 +36,7 @@ html(lang="ja")
             p.card-text
               - const tooltipTitle = `<small>${post.absoluteCreatedAt}</small>`
               small(data-bs-toggle="tooltip" data-bs-placement="top" data-bs-html="true" title=tooltipTitle) #{post.relativeCreatedAt}
-          p.card-text.lead!= post.content
+          p.card-text.lead= post.content
         - const isDeletable = (user === post.postedBy || user === 'admin')
         if isDeletable
           div.card-footer.d-flex.justify-content-end
