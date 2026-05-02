@@ -42,6 +42,7 @@ html(lang="ja")
           div.card-footer.d-flex.justify-content-end
             form(action="/posts/delete" method="post")
               input(type="hidden", name="id" value=post.id)
+              input(type="hidden", name="oneTimeToken" value=oneTimeToken)
               button(type="submit").btn.btn-outline-danger.btn-sm
                 i.bi.bi-trash
 
@@ -49,6 +50,7 @@ html(lang="ja")
       form(action="/posts", method="post" name="message-form").container-fluid.row.g-3
         div.col-12
           textarea(name="content", cols="40", rows="4" placeholder="Ctrl(Command)+Enterで送信できます").form-control
+          input(type="hidden", name="oneTimeToken" value=oneTimeToken)
         div.col-12
           button(type="submit").btn.btn-primary.float-end
             i.bi.bi-send
