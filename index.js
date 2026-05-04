@@ -18,7 +18,7 @@ const server = http.createServer(basic.check((req, res) => {
     console.error('Server Error', e);
   });
 
-const port = 8000;
+const port = process.env.PORT || 8000;
 server.listen(port, () => {
   console.info(`ポート ${port}番 で待機中`);
 });
